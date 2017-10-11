@@ -14,6 +14,7 @@
 git clone https://github.com/4dn-dcic/repli-seq-pipeline
 cd repli-seq-pipeline
 git checkout be801aa
+chmod +x *
 cd ..
 
 
