@@ -40,7 +40,7 @@ The output looks as follows:
 0.02user 0.82system 0:00.87elapsed 96%CPU (0avgtext+0avgdata 2024maxresident)k
 0inputs+0outputs (0major+103minor)pagefaults 0swaps
 ```
-The benchmarking result goes to STDERR, wrepliseqh can be collected by a file by redirecting with `2>`.
+The benchmarking result goes to STDERR, which can be collected by a file by redirecting with `2>`.
 Maxmem is 2024KB in this case ('maxresident'). Run time is 0.87 second. ('elapsed')
 
 
