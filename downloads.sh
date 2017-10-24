@@ -10,45 +10,40 @@
 
 
 ## SOFTWARE: repli-seq-pipeline
-## COMMIT: 30246a41928de4dcf4589bdef2519ff046dccb66
+## COMMIT: 8236613
 git clone https://github.com/4dn-dcic/repli-seq-pipeline
 cd repli-seq-pipeline
-git checkout 30246a41928de4dcf4589bdef2519ff046dccb66
+git checkout 8236613  
 chmod +x *
 cd ..
 
 
-## SOFTWARE: cutadapt
-## VERSION: 1.14
-pip install cutadapt==1.14
-
-
-## SOFTWARE: bwa
-## VERSION: 0.7.15
-wget https://github.com/lh3/bwa/archive/v0.7.15.tar.gz
-tar -xzf v0.7.15.tar.gz
-cd bwa-0.7.15
+## SOFTWARE: bowtie2
+## VERSION: bowtie2-2.3.3.1
+wget -O bowtie2-2.3.3.1-source.zip https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.3.3.1/bowtie2-2.3.3.1-source.zip/download 
+unzip bowtie2-2.3.3.1-source.zip
+cd bowtie2-2.3.3.1
 make
 cd ..
-ln -s bwa-0.7.15 bwa
+ln -s bowtie2-2.3.3.1 bowtie2
 
 
 ## SOFTWRAE: bedtools
-## VERSION: 2.26.0
-wget https://github.com/arq5x/bedtools2/releases/download/v2.26.0/bedtools-2.26.0.tar.gz
-tar -zxvf bedtools-2.26.0.tar.gz
+## VERSION: 2.25.0
+wget https://github.com/arq5x/bedtools2/releases/download/v2.25.0/bedtools-2.25.0.tar.gz
+tar -zxvf bedtools-2.25.0.tar.gz
 cd bedtools2
 make
 cd ..
 
 
 ## SOFTWARE: samtools
-## VERSION: 1.4
-wget https://github.com/samtools/samtools/releases/download/1.4/samtools-1.4.tar.bz2
-tar -xjf samtools-1.4.tar.bz2
-cd samtools-1.4
+## VERSION: 1.2
+wget https://github.com/samtools/samtools/releases/download/1.2/samtools-1.2.tar.bz2
+tar -xjf samtools-1.2.tar.bz2
+cd samtools-1.2
 make
 cd ..
-ln -s samtools-1.4 samtools
+ln -s samtools-1.2 samtools
 
 
