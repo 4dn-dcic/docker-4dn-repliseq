@@ -1,5 +1,6 @@
 FROM ubuntu:16.04
 MAINTAINER Soo Lee (duplexa@gmail.com)
+# This Dockerfile was adapted from the Dockerfile on https://github.com/dvera/shart
 
 # 1. general updates & installing necessary Linux components
 RUN apt-get update -y && apt-get install -y \
