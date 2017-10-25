@@ -1,5 +1,6 @@
 FROM ubuntu:16.04
 MAINTAINER Soo Lee (duplexa@gmail.com)
+# This Dockerfile was adapted from the Dockerfile on https://github.com/dvera/shart
 
 # 1. general updates & installing necessary Linux components
 RUN apt-get update -y && apt-get install -y \
@@ -64,10 +65,6 @@ ENV PATH=/usr/local/bin/FastQC/:$PATH
 # supporting UTF-8
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
-
-# wrapper
-COPY scripts/ .
-RUN chmod +x run*.sh
 
 # default command
 CMD ["ls","/usr/local/bin/repli-seq-pipeline/scripts"]
