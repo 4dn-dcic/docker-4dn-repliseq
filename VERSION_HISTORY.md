@@ -1,3 +1,6 @@
+### v4
+* align module updated/simplified to align_pe and align_se
+
 ### v3
 * clip script updated
 
