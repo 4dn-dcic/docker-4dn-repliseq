@@ -1,3 +1,6 @@
+### v5
+* the other steps updated (count, dedup, filter, filtersort, log2ratio, samstats)
+
 ### v4
 * align module updated/simplified to align_pe and align_se
 
