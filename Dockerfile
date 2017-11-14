@@ -66,6 +66,10 @@ ENV PATH=/usr/local/bin/FastQC/:$PATH
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
 
+# wrapper
+COPY scripts/ .
+RUN chmod +x run*.sh
+
 # default command
 CMD ["ls","/usr/local/bin/repli-seq-pipeline/scripts"]
 
