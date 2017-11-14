@@ -1,3 +1,6 @@
+### v7
+* minor changes in repli-seq pipeline script arguments
+
 ### v6
 * added run-align-se and run-align-pe
 
