@@ -25,16 +25,6 @@ else
 fi
   fastq1=fastq1
 
-if [[ $fastq2 =~ \.gz$ ]]
-then
-  cp $fastq2 fastq2.gz
-  gunzip fastq2.gz
-else
-  cp $fastq2 fastq2
-fi
-  fastq2=fastq2
-
-
 # run bwa
 align_se $fastq1 $index . $prefix $nThreads
 
