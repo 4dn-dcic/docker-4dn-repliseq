@@ -59,7 +59,7 @@ RUN . downloads.sh
 ENV PATH=/usr/local/bin/repli-seq-pipeline/scripts:$PATH
 ENV PATH=/usr/local/bin/samtools/:$PATH
 ENV PATH=/usr/local/bin/bwa/:$PATH
-ENV PATH=/usr/local/bin/bedtools2/:$PATH
+ENV PATH=/usr/local/bin/bedtools2/bin/:$PATH
 ENV PATH=/usr/local/bin/FastQC/:$PATH
 
 # supporting UTF-8
