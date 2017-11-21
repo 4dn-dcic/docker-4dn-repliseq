@@ -10,10 +10,10 @@
 
 
 ## SOFTWARE: repli-seq-pipeline
-## COMMIT: a8ad30d
+## COMMIT: b48d21b 
 git clone https://github.com/4dn-dcic/repli-seq-pipeline
 cd repli-seq-pipeline
-git checkout a8ad30d
+git checkout b48d21b  
 rm -rf sample_data
 chmod +x *
 cd ..
