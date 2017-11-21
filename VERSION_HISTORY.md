@@ -1,3 +1,6 @@
+### v8
+* minor fixes in repli-seq pipeline script
+
 ### v7
 * minor changes in repli-seq pipeline script arguments
 
