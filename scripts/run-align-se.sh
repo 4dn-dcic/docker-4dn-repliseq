@@ -26,5 +26,5 @@ fi
   fastq1=fastq1
 
 # run bwa
-align_se $fastq1 $index . $prefix $nThreads
+align $fastq1 $index . $prefix $nThreads
 
