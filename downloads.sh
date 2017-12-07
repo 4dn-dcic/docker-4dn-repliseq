@@ -34,7 +34,7 @@ cd ..
 ln -s bwa-0.7.15 bwa
 
 
-## SOFTWRAE: bedtools
+## SOFTWARE: bedtools
 ## VERSION: 2.26.0
 wget https://github.com/arq5x/bedtools2/releases/download/v2.26.0/bedtools-2.26.0.tar.gz
 tar -zxvf bedtools-2.26.0.tar.gz
