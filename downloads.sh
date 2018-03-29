@@ -1,12 +1,12 @@
 #!/bin/sh
 
 ## SOFTWARE: repli-seq-pipeline
-## COMMIT: f2eb460
+## COMMIT: 74bb1d6
 ## TYPE: aligner,filter,normalizer,smoother
 ## SOURCE_URL: https://github.com/4dn-dcic/repli-seq-pipeline
 git clone https://github.com/4dn-dcic/repli-seq-pipeline
 cd repli-seq-pipeline
-git checkout f2eb460
+git checkout 74bb1d6
 rm -rf sample_data
 chmod +x *
 cd ..
@@ -54,3 +54,14 @@ cd ..
 ln -s samtools-1.4 samtools
 
 
+## SOFTWARE: pairix
+## VERSION: 0.3.5
+## TYPE: file format converter,indexer
+## SOURCE_URL: https://github.com/4dn-dcic/pairix
+wget https://github.com/4dn-dcic/pairix/archive/0.3.5.tar.gz
+tar -xzf 0.3.5.tar.gz
+rm 0.3.5.tar.gz
+cd pairix-0.3.5
+make
+cd ..
+ln -s pairix-0.3.5 pairix
