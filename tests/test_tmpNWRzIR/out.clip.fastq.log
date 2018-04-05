@@ -1,0 +1,42 @@
+This is cutadapt 1.14 with Python 2.7.12
+Command line parameters: -a AGATCGGAAGAGCACACGTCTG -q 0 -O 1 -m 0 -o ./out.clip.fastq /var/lib/cwl/stgb7301466-3da3-4c78-88bb-cdcd4ca574a7/repliseq.gm12878_rep1_early.h20000.fq.gz
+Trimming 1 adapter with at most 10.0% errors in single-end mode ...
+Finished in 0.06 s (11 us/read; 5.23 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                   5,000
+Reads with adapters:                     1,850 (37.0%)
+Reads written (passing filters):         5,000 (100.0%)
+
+Total basepairs processed:       250,000 bp
+Quality-trimmed:                       0 bp (0.0%)
+Total written (filtered):        247,327 bp (98.9%)
+
+=== Adapter 1 ===
+
+Sequence: AGATCGGAAGAGCACACGTCTG; Type: regular 3'; Length: 22; Trimmed: 1850 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-22 bp: 2
+
+Bases preceding removed adapters:
+  A: 30.2%
+  C: 31.8%
+  G: 19.2%
+  T: 18.6%
+  none/other: 0.1%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+1	1335	1250.0	0	1335
+2	364	312.5	0	364
+3	112	78.1	0	112
+4	24	19.5	0	24
+5	8	4.9	0	8
+12	2	0.0	1	2
+13	1	0.0	1	1
+15	2	0.0	1	2
+21	1	0.0	2	1
+50	1	0.0	2	0 1
+

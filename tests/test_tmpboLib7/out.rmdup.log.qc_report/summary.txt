@@ -1,0 +1,3 @@
+Total aligned	
+Number of removed duplicates	
+Proportion of removed duplicates	
