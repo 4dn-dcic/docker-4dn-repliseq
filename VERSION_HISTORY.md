@@ -1,3 +1,7 @@
+### v12
+* bgzip is included to create gzipped bedgraph files.
+* cwl is included in the repo.
+
 ### v8
 * minor fixes in repli-seq pipeline script
 
