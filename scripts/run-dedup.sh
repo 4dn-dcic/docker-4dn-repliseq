@@ -17,7 +17,7 @@ mkdir -p $QCBASE
 
 # total mapped reads, in case no duplicate reads were detected
 TOT=`samtools view -F 0x4 $INPUT  | cut -f 1 | sort | uniq | wc -l`
-echo "Total aligned\t$TOT" > $QC_SUMMARY_FILE
+echo -e "Total aligned\\t$TOT" > $QC_SUMMARY_FILE
 perl -ne 'if(m#\[bam_rmdupse_core] (\d+) / (\d+) = ([\d\.]+) in library#){
             $rm=$2; $prm=$3; }
           else {
