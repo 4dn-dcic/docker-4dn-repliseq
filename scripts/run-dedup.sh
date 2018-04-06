@@ -1,5 +1,6 @@
 #!/bin/bash
 # Runs dedup, produces a QC report in addition to the output files of the dedup script of the repli-seq pipeline.
+set -e
 
 INPUT=$1
 OUTDIR=$2
@@ -14,8 +15,11 @@ QC_SUMMARY_FILE=${QCBASE}/summary.txt
 
 mkdir -p $QCBASE
 
-perl -ne 'm#\[bam_rmdupse_core] (\d+) / (\d+) = ([\d\.]+) in library#; \
-          print "Total aligned\t$2\nNumber of removed duplicates\t$1\nProportion of removed duplicates\t$3\n"' \
+perl -ne 'if(m#\[bam_rmdupse_core] (\d+) / (\d+) = ([\d\.]+) in library#){ \
+            $tot=$1; $rm=$2; $prm=$3; } \
+          else {
+            $tot=0; $rm=0; $prm=0; } \
+          print "Total aligned\t$tot\nNumber of removed duplicates\t$rm\nProportion of removed duplicates\t$prm\n"' \
           $LOGFILE \
           > $QC_SUMMARY_FILE
 
