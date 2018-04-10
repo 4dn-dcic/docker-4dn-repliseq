@@ -30,7 +30,7 @@ RUN apt-get update -y && apt-get install -y \
     vim \
     wget \
     zlib1g-dev \
-    libmysqlclient-dev \
+    libmysqlclient-dev
 
 RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash && \
     apt-get install -y git-lfs
