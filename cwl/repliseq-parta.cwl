@@ -28,6 +28,9 @@
       id: "#count_bg"
       fdn_output_type: "processed"
       fdn_format: "bg"
+      fdn_secondary_file_formats: 
+        - "bg_px2"
+        - "bw"
   inputs: 
     - 
       type: 
@@ -181,6 +184,9 @@
           fdn_type: "data file"
           fdn_cardinality: "single"
           id: "#count.out_count_bg"
+          fdn_secondary_file_formats: 
+            - "bg_px2"
+            - "bw"
       run: "count.cwl"
       inputs: 
         - 

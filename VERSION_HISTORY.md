@@ -1,3 +1,6 @@
+### v13
+* `run-count.sh` is added to generate bigwig file as well (docker now includes kentUtils for bedGraphToBigWig)
+
 ### v12
 * bgzip is included to create gzipped bedgraph files.
 * cwl is included in the repo.
