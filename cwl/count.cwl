@@ -1,7 +1,7 @@
 ---
   hints: 
     - 
-      dockerPull: "duplexa/4dn-repliseq:v13"
+      dockerPull: "duplexa/4dn-repliseq:v13.1"
       class: "DockerRequirement"
   arguments: []
   class: "CommandLineTool"
@@ -59,5 +59,5 @@
   requirements: 
     - 
       class: "InlineJavascriptRequirement"
-  cwlVersion: "draft-3"
+  cwlVersion: "v1.0"
 

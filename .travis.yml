@@ -15,7 +15,7 @@ env:
 install:
   - docker build -t $LOCAL_NAME .
   - sudo pip install schema_salad
-  - sudo pip install git+https://github.com/SooLee/cwltool.git  # cwltool
+  - sudo pip install cwltool
 
 before_script:
   - if [ "$TRAVIS_PULL_REQUEST" != false ]; then
