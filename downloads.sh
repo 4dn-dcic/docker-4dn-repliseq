@@ -6,7 +6,7 @@
 ## SOURCE_URL: https://github.com/4dn-dcic/repli-seq-pipeline
 git clone https://github.com/4dn-dcic/repli-seq-pipeline
 cd repli-seq-pipeline
-git checkout 74bb1d6
+git checkout 5ab572e
 rm -rf sample_data
 chmod +x *
 cd ..
