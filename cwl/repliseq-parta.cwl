@@ -230,8 +230,19 @@
         - 
           arg_name: "out_count_bg"
           fdn_cardinality: "single"
-          fdn_format: "bg"
-          fdn_type: "data file"
-          id: "#count/out_count_bg"
-      run: "count.cwl"
+          id: "#count.winsize"
+      id: "#count"
+      fdn_step_meta: 
+        software_used: 
+          - "bedtools_2.26.0"
+          - "repli-seq-pipeline_5ab572"
+          - "pairix_0.3.5"
+          - "bedGraphToBigWig_v302.1.0"
+        description: "Read aggregation according to the Repli-seq pipeline"
+        analysis_step_types: 
+          - "binning"
+          - "aggregation"
+  requirements: 
+    - 
+      class: "InlineJavascriptRequirement"
 
