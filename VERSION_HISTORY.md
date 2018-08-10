@@ -1,3 +1,6 @@
+### v13.1
+* CWL `v1.0` is used instead of `draft-3`.
+
 ### v13
 * `run-count.sh` is added to generate bigwig file as well (docker now includes kentUtils for bedGraphToBigWig)
 
