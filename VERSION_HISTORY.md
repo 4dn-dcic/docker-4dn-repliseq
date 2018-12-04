@@ -1,3 +1,6 @@
+### v14
+* Updated `repliseq-pipeline` : The `count` script (used by `run-count.sh`) now sorts the binfile before feeding to `bedtools coverage` to avoid a sorting inconsistency issue.
+
 ### v13.1
 * CWL `v1.0` is used instead of `draft-3`.
 
