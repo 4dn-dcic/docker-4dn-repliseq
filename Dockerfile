@@ -44,13 +44,13 @@ RUN apt-get update -y && apt-get install -y \
     r-base \
     r-base-dev
 
-RUN echo "r <- getOption('repos'); r['CRAN'] <- 'http://cran.r-project.org'; options(repos = r);" > ~/.Rprofile && \
-    Rscript -e 'install.packages("devtools", repos="http://cran.us.r-project.org")' && \
-    Rscript -e 'devtools::install_github("dvera/conifur")' && \
-    Rscript -e 'devtools::install_github("dvera/converge")' && \
-    Rscript -e 'devtools::install_github("dvera/gyro")' && \
-    Rscript -e 'devtools::install_github("dvera/travis")' && \
-    Rscript -e "install.packages(c('docopt','yaml'), repos = 'http://cran.us.r-project.org')"
+#RUN echo "r <- getOption('repos'); r['CRAN'] <- 'http://cran.r-project.org'; options(repos = r);" > ~/.Rprofile && \
+#    Rscript -e 'install.packages("devtools", repos="http://cran.us.r-project.org")' && \
+#    Rscript -e 'devtools::install_github("dvera/conifur")' && \
+#    Rscript -e 'devtools::install_github("dvera/converge")' && \
+#    Rscript -e 'devtools::install_github("dvera/gyro")' && \
+#    Rscript -e 'devtools::install_github("dvera/travis")' &&
+RUN Rscript -e "install.packages(c('docopt','yaml'), repos = 'http://cran.us.r-project.org')"
 
 # download tools
 WORKDIR /usr/local/bin
