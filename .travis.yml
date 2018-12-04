@@ -10,8 +10,8 @@ env:
 
 install:
   - docker build -t $LOCAL_NAME .
-  - sudo pip install schema_salad
-  - sudo pip install cwltool
+  - pip install schema_salad
+  - pip install cwltool
 
 before_script:
   - if [ "$TRAVIS_PULL_REQUEST" != false ]; then
