@@ -10,7 +10,7 @@
     - "make_referencebg"
   hints: 
     - 
-      dockerPull: "duplexa/4dn-repliseq:v13.1"
+      dockerPull: "duplexa/4dn-repliseq:v14"
       class: "DockerRequirement"
   cwlVersion: "v1.0"
   class: "CommandLineTool"

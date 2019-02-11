@@ -75,7 +75,7 @@
         description: "Adapter removal according to the Repli-seq pipeline"
         software_used: 
           - "cutadapt_1.14"
-          - "repli-seq-pipeline_74bb1d"
+          - "repli-seq-pipeline_f69a459"
       id: "#clip"
       in: 
         - 
@@ -98,13 +98,10 @@
           - "alignment"
         description: "Alignment according to the Repli-seq pipeline"
         software_used: 
-          - "cutadapt_1.14"
-          - "repli-seq-pipeline_5ab572"
-        description: "Adapter removal according to the Repli-seq pipeline"
-        analysis_step_types: 
-          - "adapter removal"
-    - 
-      outputs: 
+          - "bwa_0.7.15"
+          - "repli-seq-pipeline_f69a459"
+      id: "#align"
+      in: 
         - 
           arg_name: "fastq1"
           fdn_cardinality: "single"
@@ -138,13 +135,10 @@
           - "sorting"
         description: "Filtering and sorting according to the Repli-seq pipeline"
         software_used: 
-          - "bwa_0.7.15"
-          - "repli-seq-pipeline_5ab572"
-        description: "Alignment according to the Repli-seq pipeline"
-        analysis_step_types: 
-          - "alignment"
-    - 
-      outputs: 
+          - "samtools_1.4"
+          - "repli-seq-pipeline_f69a459"
+      id: "#filtersort"
+      in: 
         - 
           arg_name: "input_bam"
           fdn_cardinality: "single"
@@ -177,13 +171,16 @@
         description: "PCR Duplicate removal according to the Repli-seq pipeline"
         software_used: 
           - "samtools_1.4"
-          - "repli-seq-pipeline_5ab572"
-        description: "Filtering and sorting according to the Repli-seq pipeline"
-        analysis_step_types: 
-          - "filtering"
-          - "sorting"
-    - 
-      outputs: 
+          - "repli-seq-pipeline_f69a459"
+      id: "#dedup"
+      in: 
+        - 
+          arg_name: "input_bam"
+          fdn_cardinality: "single"
+          fdn_format: "bam"
+          id: "#dedup/input_bam"
+          source: "#filtersort/out_filtered_sorted_bam"
+      out: 
         - 
           arg_name: "out_deduped_bam"
           fdn_cardinality: "single"
@@ -203,13 +200,12 @@
           - "aggregation"
         description: "Read aggregation according to the Repli-seq pipeline"
         software_used: 
-          - "samtools_1.4"
-          - "repli-seq-pipeline_5ab572"
-        description: "PCR Duplicate removal according to the Repli-seq pipeline"
-        analysis_step_types: 
-          - "duplicate removal"
-    - 
-      outputs: 
+          - "bedtools_2.26.0"
+          - "repli-seq-pipeline_f69a459"
+          - "pairix_0.3.5"
+          - "bedGraphToBigWig_v302.1.0"
+      id: "#count"
+      in: 
         - 
           arg_name: "input_bam"
           fdn_cardinality: "single"
@@ -234,19 +230,8 @@
         - 
           arg_name: "out_count_bg"
           fdn_cardinality: "single"
-          id: "#count.winsize"
-      id: "#count"
-      fdn_step_meta: 
-        software_used: 
-          - "bedtools_2.26.0"
-          - "repli-seq-pipeline_5ab572"
-          - "pairix_0.3.5"
-          - "bedGraphToBigWig_v302.1.0"
-        description: "Read aggregation according to the Repli-seq pipeline"
-        analysis_step_types: 
-          - "binning"
-          - "aggregation"
-  requirements: 
-    - 
-      class: "InlineJavascriptRequirement"
+          fdn_format: "bg"
+          fdn_type: "data file"
+          id: "#count/out_count_bg"
+      run: "count.cwl"
 
