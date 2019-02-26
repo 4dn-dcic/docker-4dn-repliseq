@@ -1,7 +1,7 @@
 ---
   hints: 
     - 
-      dockerPull: "duplexa/4dn-repliseq:v14"
+      dockerPull: "duplexa/4dn-repliseq:v15"
       class: "DockerRequirement"
   arguments: []
   class: "CommandLineTool"
@@ -12,13 +12,24 @@
       id: "#input_fastq"
       inputBinding: 
         position: 1
+        prefix: "-1"
+        separate: true
+    - 
+      type: 
+        - "File"
+        - "null"
+      id: "#input_fastq2"
+      inputBinding: 
+        position: 2
+        prefix: "-2"
         separate: true
     - 
       type: 
         - "string"
       id: "#outprefix"
       inputBinding: 
-        position: 2
+        position: 3
+        prefix: "o"
         separate: true
       default: "out"
     - 
@@ -26,7 +37,8 @@
         - "string"
       id: "#outdir"
       inputBinding: 
-        position: 1
+        position: 4
+        prefix: "-O"
         separate: true
       default: "."
   outputs: 
@@ -35,7 +47,14 @@
         - "File"
       id: "#out_clipped_fastq"
       outputBinding: 
-        glob: "$(inputs.outdir + '/' + inputs.outprefix + '.clip.fastq')"
+        glob: "$(inputs.outdir + '/' + inputs.outprefix + '.R1.clip.fastq')"
+   - 
+      type: 
+        - "File"
+        - "null"
+      id: "#out_clipped_fastq2"
+      outputBinding: 
+        glob: "$(inputs.outdir + '/' + inputs.outprefix + '.R2.clip.fastq')"
     - 
       type: 
         - "File"
