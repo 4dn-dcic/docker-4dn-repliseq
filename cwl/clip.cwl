@@ -48,7 +48,7 @@
       id: "#out_clipped_fastq"
       outputBinding: 
         glob: "$(inputs.outdir + '/' + inputs.outprefix + '.R1.clip.fastq')"
-   - 
+    - 
       type: 
         - "File"
         - "null"
@@ -64,6 +64,7 @@
     - 
       type: 
         - "File"
+        - "null"
       id: "#out_log2"
       outputBinding: 
         glob: "$(inputs.outdir + '/' + inputs.outprefix + '.R2.clip.fastq.log')"
