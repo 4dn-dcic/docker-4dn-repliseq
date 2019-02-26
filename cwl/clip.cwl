@@ -29,7 +29,7 @@
       id: "#outprefix"
       inputBinding: 
         position: 3
-        prefix: "o"
+        prefix: "-o"
         separate: true
       default: "out"
     - 
