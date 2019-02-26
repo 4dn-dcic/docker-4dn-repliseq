@@ -23,6 +23,9 @@ before_script:
 script:
   - source tests/tests.sh
   - source tests/tests_cwl_all.sh
+  - source tests/tests_cwl.sh clip 2
+  - source tests/tests_cwl.sh align 2
+  - source tests/tests_cwl.sh repliseq-parta 2
 
 after_success:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
