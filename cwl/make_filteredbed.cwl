@@ -10,7 +10,7 @@
     - "make_filteredbed"
   hints: 
     - 
-      dockerPull: "duplexa/4dn-repliseq:v14"
+      dockerPull: "duplexa/4dn-repliseq:v15"
       class: "DockerRequirement"
   cwlVersion: "v1.0"
   class: "CommandLineTool"
