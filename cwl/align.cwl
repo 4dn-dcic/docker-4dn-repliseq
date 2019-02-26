@@ -1,7 +1,7 @@
 ---
   hints: 
     - 
-      dockerPull: "duplexa/4dn-repliseq:v14"
+      dockerPull: "duplexa/4dn-repliseq:v15"
       class: "DockerRequirement"
   arguments: []
   class: "CommandLineTool"
@@ -12,20 +12,32 @@
       id: "#fastq1"
       inputBinding: 
         position: 1
+        prefix: "-1"
+        separate: true
+    - 
+      type: 
+        - "File"
+        - "null"
+      id: "#fastq1"
+      inputBinding: 
+        position: 2
+        prefix: "-2"
         separate: true
     - 
       type: 
         - "File"
       id: "#bwa_index"
       inputBinding: 
-        position: 2
+        position: 3
+        prefix: "-I"
         separate: true
     - 
       type: 
         - "int"
       id: "#nThreads"
       inputBinding: 
-        position: 5
+        position: 4
+        prefix: "-p"
         separate: true
       default: 4
     - 
@@ -33,7 +45,8 @@
         - "string"
       id: "#prefix"
       inputBinding: 
-        position: 4
+        position: 5
+        prefix: "-o"
         separate: true
       default: "out"
     - 
@@ -41,7 +54,8 @@
         - "string"
       id: "#outdir"
       inputBinding: 
-        position: 3
+        position: 6
+        prefix: "-O"
         separate: true
       default: "."
   outputs: 
