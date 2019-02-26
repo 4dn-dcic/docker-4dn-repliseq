@@ -16,6 +16,12 @@
       type: 
         - "File"
     - 
+      fdn_format: "fastq"
+      id: "#fastq2"
+      type: 
+        - "File"
+        - "null"
+    - 
       fdn_format: "bwaIndex"
       id: "#bwaIndex"
       type: 
@@ -75,7 +81,7 @@
         description: "Adapter removal according to the Repli-seq pipeline"
         software_used: 
           - "cutadapt_1.14"
-          - "repli-seq-pipeline_f69a459"
+          - "repli-seq-pipeline_8584ff9"
       id: "#clip"
       in: 
         - 
@@ -85,12 +91,24 @@
           fdn_type: "data file"
           id: "#clip/input_fastq"
           source: "#fastq"
+        - 
+          arg_name: "input_fastq2"
+          fdn_cardinality: "single"
+          fdn_format: "fastq"
+          fdn_type: "data file"
+          id: "#clip/input_fastq2"
+          source: "#fastq2"
       out: 
         - 
           arg_name: "out_clipped_fastq"
           fdn_cardinality: "single"
           fdn_format: "fastq"
           id: "#clip/out_clipped_fastq"
+        - 
+          arg_name: "out_clipped_fastq2"
+          fdn_cardinality: "single"
+          fdn_format: "fastq"
+          id: "#clip/out_clipped_fastq2"
       run: "clip.cwl"
     - 
       fdn_step_meta: 
@@ -99,7 +117,7 @@
         description: "Alignment according to the Repli-seq pipeline"
         software_used: 
           - "bwa_0.7.15"
-          - "repli-seq-pipeline_f69a459"
+          - "repli-seq-pipeline_8584ff9"
       id: "#align"
       in: 
         - 
@@ -108,6 +126,12 @@
           fdn_format: "fastq"
           id: "#align/fastq1"
           source: "#clip/out_clipped_fastq"
+       - 
+          arg_name: "fastq2"
+          fdn_cardinality: "single"
+          fdn_format: "fastq"
+          id: "#align/fastq2"
+          source: "#clip/out_clipped_fastq2"
         - 
           arg_name: "bwa_index"
           fdn_cardinality: "single"
@@ -136,7 +160,7 @@
         description: "Filtering and sorting according to the Repli-seq pipeline"
         software_used: 
           - "samtools_1.4"
-          - "repli-seq-pipeline_f69a459"
+          - "repli-seq-pipeline_8584ff9"
       id: "#filtersort"
       in: 
         - 
@@ -171,7 +195,7 @@
         description: "PCR Duplicate removal according to the Repli-seq pipeline"
         software_used: 
           - "samtools_1.4"
-          - "repli-seq-pipeline_f69a459"
+          - "repli-seq-pipeline_8584ff9"
       id: "#dedup"
       in: 
         - 
@@ -201,7 +225,7 @@
         description: "Read aggregation according to the Repli-seq pipeline"
         software_used: 
           - "bedtools_2.26.0"
-          - "repli-seq-pipeline_f69a459"
+          - "repli-seq-pipeline_8584ff9"
           - "pairix_0.3.5"
           - "bedGraphToBigWig_v302.1.0"
       id: "#count"
