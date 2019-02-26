@@ -126,7 +126,7 @@
           fdn_format: "fastq"
           id: "#align/fastq1"
           source: "#clip/out_clipped_fastq"
-       - 
+        - 
           arg_name: "fastq2"
           fdn_cardinality: "single"
           fdn_format: "fastq"

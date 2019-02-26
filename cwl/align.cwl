@@ -18,7 +18,7 @@
       type: 
         - "File"
         - "null"
-      id: "#fastq1"
+      id: "#fastq2"
       inputBinding: 
         position: 2
         prefix: "-2"
