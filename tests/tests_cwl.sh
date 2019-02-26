@@ -1,6 +1,11 @@
 CWL_NAME=$1
 CWL_FILENAME=$1.cwl
-INPUT_JSON_NAME=$1.input.json
+if [[ ! -z $2 ]]
+then
+ INPUT_JSON_NAME=$1.input.$2.json
+else
+ INPUT_JSON_NAME=$1.input.json
+fi
 CWD=$(pwd)
 OUTDIR=$CWD/tests/test_outdir
 LOCAL_CWL_TMPDIR=$CWD/tests/test_tmp

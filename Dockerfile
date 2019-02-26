@@ -65,6 +65,7 @@ ENV PATH=/usr/local/bin/bedtools2/bin/:$PATH
 ENV PATH=/usr/local/bin/FastQC/:$PATH
 ENV PATH=/usr/local/bin/pairix/bin/:$PATH
 ENV PATH=/usr/local/bin/kentUtils/bin/:$PATH
+RUN chmod +x /usr/local/bin/repli-seq-pipeline/scripts/*
 
 # supporting UTF-8
 ENV LC_ALL=C.UTF-8
