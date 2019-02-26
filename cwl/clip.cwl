@@ -68,7 +68,7 @@
       outputBinding: 
         glob: "$(inputs.outdir + '/' + inputs.outprefix + '.R2.clip.fastq.log')"
   baseCommand: 
-    - "run_clip.sh"
+    - "run-clip.sh"
   requirements: 
     - 
       class: "InlineJavascriptRequirement"
