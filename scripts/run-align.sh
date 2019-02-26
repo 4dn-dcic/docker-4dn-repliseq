@@ -30,13 +30,13 @@ while getopts "1:2:I:O:o:p:" opt; do
         esac
 done
 
-if [[ ! -z $index_file ]]
+if [[ -z $index_file || ! -e $index_file ]]
 then
   echo "index file missing"
   exit 1
 fi
 
-if [[ ! -z $fastq1 ]]
+if [[ -z $fastq1 || ! -e $fastq1 ]]
 then
   echo "fastq1 file missing"
   exit 1
@@ -62,14 +62,17 @@ fi
   fastq1=fastq1
   
 # unzip fastq file 2
-if [[  ! -z $fastq2 && $fastq2 =~ \.gz$ ]]
+if [[ ! -z $fastq2 ]]
 then
-  cp $fastq2 fastq2.gz
-  gunzip fastq2.gz
-else
-  cp $fastq2 fastq2
+  if [[ $fastq2 =~ \.gz$ ]]
+  then
+    cp $fastq2 fastq2.gz
+    gunzip fastq2.gz
+  else
+    cp $fastq2 fastq2
+  fi
+    fastq2=fastq2
 fi
-  fastq2=fastq2
   
 
 # run bwa

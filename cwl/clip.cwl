@@ -60,9 +60,15 @@
         - "File"
       id: "#out_log"
       outputBinding: 
-        glob: "$(inputs.outdir + '/' + inputs.outprefix + '.clip.fastq.log')"
+        glob: "$(inputs.outdir + '/' + inputs.outprefix + '.R1.clip.fastq.log')"
+    - 
+      type: 
+        - "File"
+      id: "#out_log2"
+      outputBinding: 
+        glob: "$(inputs.outdir + '/' + inputs.outprefix + '.R2.clip.fastq.log')"
   baseCommand: 
-    - "clip"
+    - "run_clip.sh"
   requirements: 
     - 
       class: "InlineJavascriptRequirement"

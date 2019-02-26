@@ -25,7 +25,7 @@ while getopts "1:2:O:o:" opt; do
         esac
 done
 
-if [[ ! -z $fastq1 ]]
+if [[ -z $fastq1 ]]
 then
   echo "fastq1 file missing"
   exit 1
