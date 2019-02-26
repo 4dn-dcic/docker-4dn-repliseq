@@ -1,7 +1,7 @@
 ---
   hints: 
     - 
-      dockerPull: "duplexa/4dn-repliseq:v14"
+      dockerPull: "duplexa/4dn-repliseq:v15"
       class: "DockerRequirement"
   arguments: []
   class: "CommandLineTool"
