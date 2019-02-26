@@ -1,0 +1,6 @@
+{
+    "input_fastq": {
+        "class": "File", 
+        "path": "../test_files/repliseq.gm12878_rep1_early.h20000.fq.gz"
+    }
+}

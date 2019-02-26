@@ -11,7 +11,7 @@ env:
 install:
   - docker build -t $LOCAL_NAME .
   - sudo pip install schema_salad
-  - sudo pip install cwltool
+  - sudo pip install cwltool==1.0.20181201184214
 
 before_script:
   - if [ "$TRAVIS_PULL_REQUEST" != false ]; then
@@ -23,6 +23,9 @@ before_script:
 script:
   - source tests/tests.sh
   - source tests/tests_cwl_all.sh
+  - source tests/tests_cwl.sh clip 2
+  - source tests/tests_cwl.sh align 2
+  - source tests/tests_cwl.sh repliseq-parta 2
 
 after_success:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
