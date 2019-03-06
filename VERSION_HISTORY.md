@@ -1,3 +1,9 @@
+### v16
+* chromosome order inconsistency between genome index and chromsize handling.
+
+### v15
+* (non-interleaved) PE support
+
 ### v14
 * Updated `repliseq-pipeline` : The `count` script (used by `run-count.sh`) now sorts the binfile before feeding to `bedtools coverage` to avoid a sorting inconsistency issue.
 
