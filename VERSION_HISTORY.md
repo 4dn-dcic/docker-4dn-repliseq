@@ -1,5 +1,5 @@
 ## v16.1
-* keep an additional count bedGraph without scaling
+* keep an additional count bedGraph without scaling and update docker hint repo
 
 ### v16
 * chromosome order inconsistency between genome index and chromsize handling.
