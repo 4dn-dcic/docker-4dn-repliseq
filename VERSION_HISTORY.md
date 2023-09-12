@@ -1,3 +1,6 @@
+## v16.1
+* keep an additional count bedGraph without scaling
+
 ### v16
 * chromosome order inconsistency between genome index and chromsize handling.
 
