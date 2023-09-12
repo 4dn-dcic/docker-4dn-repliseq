@@ -54,6 +54,15 @@
         - ".px2"
       outputBinding: 
         glob: "$(inputs.outdir + '/' + inputs.outprefix + '.w' + inputs.winsize + '.bedGraph.gz')"
+    - 
+      type: 
+        - "File"
+      id: "#out_count_bg_rpkm"
+      secondaryFiles: 
+        - "^^.bw"
+        - ".px2"
+      outputBinding: 
+        glob: "$(inputs.outdir + '/' + inputs.outprefix + '.w' + inputs.winsize + 'rpkm.bedGraph.gz')"
   baseCommand: 
     - "run-count.sh"
   requirements: 

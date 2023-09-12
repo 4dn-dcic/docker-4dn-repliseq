@@ -13,3 +13,7 @@ gunzip $OUTDIR/$OUTPREFIX.w$WINSIZE.bedGraph.gz
 bedGraphToBigWig $OUTDIR/$OUTPREFIX.w$WINSIZE.bedGraph $CHROMSIZE $OUTDIR/$OUTPREFIX.w$WINSIZE.bw
 bgzip $OUTDIR/$OUTPREFIX.w$WINSIZE.bedGraph
 pairix -p bed $OUTDIR/$OUTPREFIX.w$WINSIZE.bedGraph.gz
+gunzip $OUTDIR/$OUTPREFIX.w$WINSIZE.scaled.bedGraph.gz 
+bedGraphToBigWig $OUTDIR/$OUTPREFIX.w$WINSIZE.scaled.bedGraph $CHROMSIZE $OUTDIR/$OUTPREFIX.w$WINSIZE.scaled.bw
+bgzip $OUTDIR/$OUTPREFIX.w$WINSIZE.scaled.bedGraph
+pairix -p bed $OUTDIR/$OUTPREFIX.w$WINSIZE.scaled.bedGraph.gz
