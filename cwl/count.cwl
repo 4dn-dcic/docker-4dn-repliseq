@@ -59,7 +59,7 @@
         - "File"
       id: "#out_count_bg_rpkm"
       secondaryFiles: 
-        - "^^.bw"
+        - "^^^.bw"
         - ".px2"
       outputBinding: 
         glob: "$(inputs.outdir + '/' + inputs.outprefix + '.w' + inputs.winsize + '.rpkm.bedGraph.gz')"
