@@ -1,7 +1,7 @@
 ---
   hints: 
     - 
-      dockerPull: "duplexa/4dn-repliseq:v16"
+      dockerPull: "4dndcic/4dn-repliseq:v16.1"
       class: "DockerRequirement"
   arguments: []
   class: "CommandLineTool"
@@ -54,6 +54,15 @@
         - ".px2"
       outputBinding: 
         glob: "$(inputs.outdir + '/' + inputs.outprefix + '.w' + inputs.winsize + '.bedGraph.gz')"
+    - 
+      type: 
+        - "File"
+      id: "#out_count_bg_rpkm"
+      secondaryFiles: 
+        - "^^.bw"
+        - ".px2"
+      outputBinding: 
+        glob: "$(inputs.outdir + '/' + inputs.outprefix + '.w' + inputs.winsize + '.rpkm.bedGraph.gz')"
   baseCommand: 
     - "run-count.sh"
   requirements: 

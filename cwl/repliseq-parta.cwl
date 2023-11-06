@@ -70,6 +70,16 @@
       outputSource: "#count/out_count_bg"
       type: 
         - "File"
+    - 
+      fdn_format: "bg"
+      fdn_output_type: "processed"
+      fdn_secondary_file_formats: 
+        - "bg_px2"
+        - "bw"
+      id: "#count_bg_rpkm"
+      outputSource: "#count/out_count_bg_rpkm"
+      type: 
+        - "File"
   requirements: 
     - 
       class: "InlineJavascriptRequirement"
@@ -257,5 +267,11 @@
           fdn_format: "bg"
           fdn_type: "data file"
           id: "#count/out_count_bg"
+        - 
+          arg_name: "out_count_bg_rpkm"
+          fdn_cardinality: "single"
+          fdn_format: "bg"
+          fdn_type: "data file"
+          id: "#count/out_count_bg_rpkm"
       run: "count.cwl"
 

@@ -1,12 +1,12 @@
 #!/bin/sh
 
 ## SOFTWARE: repli-seq-pipeline
-## COMMIT: 2206392
+## COMMIT: 70feb8e
 ## TYPE: aligner,filter,normalizer,smoother
 ## SOURCE_URL: https://github.com/4dn-dcic/repli-seq-pipeline
 git clone https://github.com/4dn-dcic/repli-seq-pipeline
 cd repli-seq-pipeline
-git checkout 2206392
+git checkout 70feb8e
 rm -rf sample_data
 chmod +x *
 cd ..
